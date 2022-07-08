@@ -1,9 +1,9 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io/ioutil"
-	//"strings"
 )
 
 //function for counting characters from textfile
@@ -58,7 +58,16 @@ func CountWhiteSpaces(data string) {
 }
 
 func main() {
-	data, err := ioutil.ReadFile("file.txt")
+
+	var path string
+
+	flag.StringVar(&path, "path", "", "")
+	flag.Parse()
+	fmt.Println("Path", path)
+
+	// fmt.Println(path, "file.txt")
+
+	data, err := ioutil.ReadFile(path)
 	//reading a file
 	if err != nil {
 		fmt.Println("File reading error", err)
@@ -66,6 +75,7 @@ func main() {
 	}
 	// fmt.Println("Contents of file:")
 	// fmt.Println(string(data))
+
 	CountCharacters(string(data))
 	CountWord(string(data))
 	CountLines(string(data))
