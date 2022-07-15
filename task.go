@@ -1,7 +1,6 @@
 package main
 
 import (
-	//"flag"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -21,7 +20,7 @@ func track(s string, startTime time.Time) {
 
 func execute() {
 	defer track(runningtime("execute"))
-	time.Sleep(3 * time.Second)
+	//time.Sleep(3 * time.Second)
 }
 
 //function for counting characters from textfile
@@ -112,11 +111,15 @@ func main() {
 	go CountLines(string(data), c)
 
 	go CountWhiteSpaces(string(data), c)
-	w, x := <-c, <-c
-	y, z := <-c, <-c
-	fmt.Println(w)
-	fmt.Println(x)
-	fmt.Println(y)
-	fmt.Println(z)
+	for i := 0; i < 4; i++ {
+		data := <-c
+		fmt.Println(data)
+	}
+	// w, x := <-c, <-c
+	// y, z := <-c, <-c
+	// fmt.Println(w)
+	// fmt.Println(x)
+	// fmt.Println(y)
+	// fmt.Println(z)
 
 }
