@@ -101,10 +101,6 @@ func main() {
 		fmt.Println("File reading error", err)
 		return
 	}
-	// fmt.Println("Contents of file:")
-	//fmt.Println(string(data))
-	//go final(string(data))
-	//w, z := <-c, <-c // receive from c
 
 	go CountCharacters(string(data), c)
 	go CountWord(string(data), c)
@@ -115,11 +111,5 @@ func main() {
 		data := <-c
 		fmt.Println(data)
 	}
-	// w, x := <-c, <-c
-	// y, z := <-c, <-c
-	// fmt.Println(w)
-	// fmt.Println(x)
-	// fmt.Println(y)
-	// fmt.Println(z)
 
 }
