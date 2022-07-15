@@ -17,3 +17,6 @@ first we type command like    go run task.go
 ## output
 output after channel go routines and time executation implementation.
 ![goo](![newwwtaskk](https://user-images.githubusercontent.com/93153939/179165086-cb125640-e3aa-46e7-b4a7-778b71359e91.PNG)
+##output after make channel generic
+![goo](
+![channels](https://user-images.githubusercontent.com/93153939/179185746-98f65eb3-741d-400d-9f6e-4adccba6817c.PNG)
